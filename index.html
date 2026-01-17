@@ -963,6 +963,13 @@
             border-bottom: 4px solid var(--primary-green);
         }
 
+        .leader-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-cream);
+        }
+
         .leader-content {
             padding: 1.5rem;
         }
@@ -987,6 +994,94 @@
             color: var(--text-medium);
             font-size: 0.9rem;
             line-height: 1.7;
+        }
+
+        /* Departments Section */
+        .departments {
+            padding: 6rem 2rem;
+            background: var(--light-cream);
+        }
+
+        .departments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .department-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 30px var(--shadow-color);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .department-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            transform: scaleY(0);
+            transition: transform 0.4s ease;
+        }
+
+        .department-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .department-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .department-number {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .department-info {
+            flex: 1;
+        }
+
+        .department-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .department-secretary {
+            color: var(--primary-green);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .department-joint-sec {
+            color: var(--text-medium);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .departments-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Gallery Section */
@@ -1782,45 +1877,150 @@
     <section class="leadership" id="leadership">
         <div class="section-container">
             <div class="section-header reveal">
-                <span class="section-tag" data-en="Our Speakers" data-te="మా వక్తలు" data-ur="ہمارے مقررین">Our Speakers</span>
+                <span class="section-tag" data-en="Our Leadership" data-te="మా నాయకత్వం" data-ur="ہماری قیادت">Our Leadership</span>
                 <h2 class="section-title" data-en="Voices That Inspire" data-te="ప్రేరేపించే స్వరాలు" data-ur="آوازیں جو متاثر کرتی ہیں">Voices That Inspire</h2>
                 <p class="section-subtitle" data-en="Distinguished scholars, experts, and community leaders who guide and enlighten our programs with their wisdom and experience." data-te="మా కార్యక్రమాలను వారి జ్ఞానం మరియు అనుభవంతో మార్గదర్శకత్వం చేసే మరియు ప్రకాశవంతం చేసే ప్రముఖ పండితులు, నిపుణులు మరియు సమాజ నాయకులు." data-ur="ممتاز علماء، ماہرین، اور کمیونٹی رہنما جو اپنی حکمت اور تجربے سے ہمارے پروگراموں کی رہنمائی اور روشنی فراہم کرتے ہیں۔">Distinguished scholars, experts, and community leaders who guide and enlighten our programs with their wisdom and experience.</p>
             </div>
 
             <div class="leadership-grid">
                 <div class="leader-card reveal">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Janab Omer Jaleel" class="leader-image">
+                    <img src="images/leaders/omarsir.JPG" alt="Janab Dr. Mohammed Nizam" class="leader-image">
                     <div class="leader-content">
-                        <h3 class="leader-name" data-en="Janab Omer Jaleel Sahab" data-te="జనాబ్ ఉమర్ జలీల్ సాహెబ్" data-ur="جناب عمر جلیل صاحب">Janab Omer Jaleel Sahab</h3>
-                        <span class="leader-role" data-en="IAS (Rtd) - Keynote Speaker" data-te="IAS (రిటైర్డ్) - కీనోట్ స్పీకర్" data-ur="IAS (ریٹائرڈ) - کلیدی مقرر">IAS (Rtd) - Keynote Speaker</span>
-                        <p class="leader-text" data-en="His words enlighten audiences on global prospects and new technologies. He emphasizes discipline and diverse career avenues for youth." data-te="అతని మాటలు ప్రేక్షకులకు గ్లోబల్ అవకాశాలు మరియు కొత్త టెక్నాలజీల గురించి అవగాహన కల్పిస్తాయి. యువతకు క్రమశిక్షణ మరియు విభిన్న కెరీర్ మార్గాలపై ఆయన నొక్కి చెప్పారు." data-ur="ان کے الفاظ سامعین کو عالمی مواقع اور نئی ٹیکنالوجیز کے بارے میں روشناس کراتے ہیں۔ وہ نوجوانوں کے لیے نظم و ضبط اور متنوع کیریئر کے راستوں پر زور دیتے ہیں۔">His words enlighten audiences on global prospects and new technologies. He emphasizes discipline and diverse career avenues for youth.</p>
+                        <h3 class="leader-name" data-en="Janab Dr. Mohammed Nizam" data-te="జనాబ్ డా. మొహమ్మద్ నిజామ్" data-ur="جناب ڈاکٹر محمد نظام">Janab Dr. Mohammed Nizam</h3>
+                        <span class="leader-role" data-en="President" data-te="అధ్యక్షుడు" data-ur="صدر">President</span>
+                        <p class="leader-text" data-en="Leading the All India Milli Council Telangana with vision and dedication towards community empowerment and social welfare." data-te="సమాజ సాధికారత మరియు సామాజిక సంక్షేమం దిశగా దృష్టి మరియు అంకితభావంతో ఆల్ ఇండియా మిల్లీ కౌన్సిల్ తెలంగాణకు నాయకత్వం వహిస్తున్నారు." data-ur="کمیونٹی کو بااختیار بنانے اور سماجی بہبود کی طرف وژن اور لگن کے ساتھ آل انڈیا ملی کونسل تلنگانہ کی قیادت کر رہے ہیں۔">Leading the All India Milli Council Telangana with vision and dedication towards community empowerment and social welfare.</p>
                     </div>
                 </div>
 
                 <div class="leader-card reveal">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="Mufti Omer Abedeen" class="leader-image">
+                    <img src="images/leaders/zafiursir.JPG" alt="Janab Zafar Masood" class="leader-image">
                     <div class="leader-content">
-                        <h3 class="leader-name" data-en="Mufti Omer Abedeen Sahab" data-te="ముఫ్తీ ఉమర్ అబెదీన్ సాహెబ్" data-ur="مفتی عمر عابدین صاحب">Mufti Omer Abedeen Sahab</h3>
-                        <span class="leader-role" data-en="Religious Scholar" data-te="మత పండితుడు" data-ur="مذہبی عالم">Religious Scholar</span>
-                        <p class="leader-text" data-en="Speaks on Deen and Teens, stressing excellence in academics alongside a strong bond with faith. Guides youth on cautious social media use." data-te="దీన్ మరియు టీన్స్ గురించి మాట్లాడారు, విశ్వాసంతో బలమైన బంధంతో పాటు విద్యలో శ్రేష్ఠతను నొక్కి చెప్పారు. జాగ్రత్తగా సోషల్ మీడియా వాడకంపై యువతకు మార్గదర్శకత్వం చేస్తారు." data-ur="دین اور نوجوانوں کے بارے میں بات کرتے ہیں، ایمان کے ساتھ مضبوط تعلق کے ساتھ تعلیمی عمدگی پر زور دیتے ہیں۔ نوجوانوں کو محتاط سوشل میڈیا استعمال کی رہنمائی کرتے ہیں۔">Speaks on Deen and Teens, stressing excellence in academics alongside a strong bond with faith. Guides youth on cautious social media use.</p>
+                        <h3 class="leader-name" data-en="Janab Zafar Masood Sahab" data-te="జనాబ్ జాఫర్ మసూద్ సాహెబ్" data-ur="جناب ظفر مسعود صاحب">Janab Zafar Masood Sahab</h3>
+                        <span class="leader-role" data-en="Acting President" data-te="తాత్కాలిక అధ్యక్షుడు" data-ur="قائم مقام صدر">Acting President</span>
+                        <p class="leader-text" data-en="Providing steadfast leadership and guidance to the organization, ensuring continuity in our mission of community service and development." data-te="సంస్థకు స్థిరమైన నాయకత్వం మరియు మార్గదర్శకత్వం అందిస్తూ, సమాజ సేవ మరియు అభివృద్ధి మా లక్ష్యంలో కొనసాగింపును నిర్ధారిస్తున్నారు." data-ur="تنظیم کو مستحکم قیادت اور رہنمائی فراہم کرتے ہوئے، کمیونٹی سروس اور ترقی کے ہمارے مشن میں تسلسل کو یقینی بنا رہے ہیں۔">Providing steadfast leadership and guidance to the organization, ensuring continuity in our mission of community service and development.</p>
                     </div>
                 </div>
 
                 <div class="leader-card reveal">
-                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face" alt="Dr. Prashant Utage" class="leader-image">
+                    <div class="leader-image leader-placeholder">
+                        <i data-lucide="user" style="width: 80px; height: 80px; color: var(--primary-green);"></i>
+                    </div>
                     <div class="leader-content">
-                        <h3 class="leader-name" data-en="Dr. Prashant Utage" data-te="డా. ప్రశాంత్ ఉటేజ్" data-ur="ڈاکٹر پرشانت اوٹیج">Dr. Prashant Utage</h3>
-                        <span class="leader-role" data-en="Neurologist" data-te="న్యూరాలజిస్ట్" data-ur="نیورولوجسٹ">Neurologist</span>
-                        <p class="leader-text" data-en="Expert on the evil effects of screen addiction and how it needs to be properly managed for mental and physical health of youth." data-te="స్క్రీన్ వ్యసనం యొక్క దుష్ప్రభావాలు మరియు యువత మానసిక మరియు శారీరక ఆరోగ్యం కోసం దానిని సరిగ్గా నిర్వహించాల్సిన అవసరంపై నిపుణుడు." data-ur="اسکرین کی لت کے برے اثرات اور نوجوانوں کی ذہنی اور جسمانی صحت کے لیے اسے صحیح طریقے سے منظم کرنے کی ضرورت پر ماہر۔">Expert on the evil effects of screen addiction and how it needs to be properly managed for mental and physical health of youth.</p>
+                        <h3 class="leader-name" data-en="Mufti Mohammed Omer Abideen" data-te="ముఫ్తీ మొహమ్మద్ ఉమర్ అబిదీన్" data-ur="مفتی محمد عمر عابدین">Mufti Mohammed Omer Abideen</h3>
+                        <span class="leader-role" data-en="General Secretary" data-te="ప్రధాన కార్యదర్శి" data-ur="جنرل سیکرٹری">General Secretary</span>
+                        <p class="leader-text" data-en="Coordinating organizational activities and programs, bridging faith and community service with wisdom and dedication." data-te="సంస్థాగత కార్యకలాపాలు మరియు కార్యక్రమాలను సమన్వయం చేస్తూ, జ్ఞానం మరియు అంకితభావంతో విశ్వాసం మరియు సమాజ సేవను అనుసంధానం చేస్తున్నారు." data-ur="تنظیمی سرگرمیوں اور پروگراموں کو مربوط کرتے ہوئے، حکمت اور لگن کے ساتھ ایمان اور کمیونٹی سروس کو جوڑ رہے ہیں۔">Coordinating organizational activities and programs, bridging faith and community service with wisdom and dedication.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="departments" id="departments">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-tag" data-en="Our Departments" data-te="మా విభాగాలు" data-ur="ہمارے شعبے">Our Departments</span>
+                <h2 class="section-title" data-en="Secretaries For The Departments" data-te="విభాగాల కార్యదర్శులు" data-ur="شعبوں کے سیکرٹریز">Secretaries For The Departments</h2>
+                <p class="section-subtitle" data-en="Our dedicated department secretaries work tirelessly to serve the community across various domains." data-te="మా అంకితభావం గల విభాగ కార్యదర్శులు వివిధ రంగాలలో సమాజానికి సేవ చేయడానికి అవిశ్రాంతంగా పని చేస్తారు." data-ur="ہمارے سرشار شعبہ جاتی سیکرٹریز مختلف شعبوں میں کمیونٹی کی خدمت کے لیے انتھک محنت کرتے ہیں۔">Our dedicated department secretaries work tirelessly to serve the community across various domains.</p>
+            </div>
+
+            <div class="departments-grid">
+                <div class="department-card reveal">
+                    <div class="department-number">1</div>
+                    <div class="department-info">
+                        <h3 class="department-name" data-en="Department of Islah-E-muasharah (Men)" data-te="ఇస్లాహ్-ఎ-ముఆషరా విభాగం (పురుషులు)" data-ur="شعبہ اصلاح معاشرہ (مرد)">Department of Islah-E-muasharah (Men)</h3>
+                        <p class="department-secretary" data-en="Mr. Umar Mallahi" data-te="శ్రీ ఉమర్ మల్లాహి" data-ur="جناب عمر ملاحی">Mr. Umar Mallahi</p>
                     </div>
                 </div>
 
-                <div class="leader-card reveal">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face" alt="Dr. Raziuddin" class="leader-image">
-                    <div class="leader-content">
-                        <h3 class="leader-name" data-en="Dr. Raziuddin" data-te="డా. రజియుద్దీన్" data-ur="ڈاکٹر رضی الدین">Dr. Raziuddin</h3>
-                        <span class="leader-role" data-en="Indian Team Coach - Ju Jitsu" data-te="ఇండియన్ టీమ్ కోచ్ - జూ జిట్సు" data-ur="انڈین ٹیم کوچ - جو جیتسو">Indian Team Coach - Ju Jitsu</span>
-                        <p class="leader-text" data-en="Motivates students on being physically fit and adopting a healthy lifestyle through discipline and martial arts training." data-te="క్రమశిక్షణ మరియు మార్షల్ ఆర్ట్స్ శిక్షణ ద్వారా శారీరకంగా ఫిట్‌గా ఉండటం మరియు ఆరోగ్యకరమైన జీవనశైలిని అనుసరించడంపై విద్యార్థులను ప్రేరేపిస్తారు." data-ur="نظم و ضبط اور مارشل آرٹس ٹریننگ کے ذریعے جسمانی طور پر فٹ رہنے اور صحت مند طرز زندگی اپنانے کے لیے طلباء کی حوصلہ افزائی کرتے ہیں۔">Motivates students on being physically fit and adopting a healthy lifestyle through discipline and martial arts training.</p>
+                <div class="department-card reveal">
+                    <div class="department-number">2</div>
+                    <div class="department-info">
+                        <h3 class="department-name" data-en="Department of Islah-E-muasharah (Women)" data-te="ఇస్లాహ్-ఎ-ముఆషరా విభాగం (మహిళలు)" data-ur="شعبہ اصلاح معاشرہ (خواتین)">Department of Islah-E-muasharah (Women)</h3>
+                        <p class="department-secretary" data-en="Miss. Hafsa Abedeen" data-te="మిస్ హఫ్సా అబెదీన్" data-ur="مس حفصہ عابدین">Miss. Hafsa Abedeen</p>
+                    </div>
+                </div>
+
+                <div class="department-card reveal">
+                    <div class="department-number">3</div>
+                    <div class="department-info">
+                        <h3 class="department-name" data-en="Department of Religious Education" data-te="మత విద్య విభాగం" data-ur="شعبہ دینی تعلیم">Department of Religious Education</h3>
+                        <p class="department-secretary" data-en="Molana. MD Anas Nazeer" data-te="మౌలానా. ఎమ్‌డి అనస్ నజీర్" data-ur="مولانا محمد انس نذیر">Molana. MD Anas Nazeer</p>
+                    </div>
+                </div>
+
+                <div class="department-card reveal">
+                    <div class="department-number">4</div>
+                    <div class="department-info">
+                        <h3 class="department-name" data-en="Department of Modern and Technical Education" data-te="ఆధునిక మరియు సాంకేతిక విద్య విభాగం" data-ur="شعبہ جدید و فنی تعلیم">Department of Modern and Technical Education</h3>
+                        <p class="department-secretary" data-en="Mr. Abdul Lateef Aatir" data-te="శ్రీ అబ్దుల్ లతీఫ్ ఆతిర్" data-ur="جناب عبدالطیف عاطر">Mr. Abdul Lateef Aatir</p>
+                    </div>
+                </div>
+
+                <div class="department-card reveal">
+                    <div class="department-number">5</div>
+                    <div class="department-info">
+                        <h3 class="department-name" data-en="Department of Planning and Extension of Milli Council" data-te="మిల్లీ కౌన్సిల్ ప్రణాళిక మరియు విస్తరణ విభాగం" data-ur="شعبہ منصوبہ بندی و توسیع ملی کونسل">Department of Planning and Extension of Milli Council</h3>
+                        <p class="department-secretary" data-en="Mr. Hafiz Umar Shafi" data-te="శ్రీ హఫీజ్ ఉమర్ షఫీ" data-ur="جناب حافظ عمر شفیع">Mr. Hafiz Umar Shafi</p>
+                    </div>
+                </div>
+
+                <div class="department-card reveal">
+                    <div class="department-number">6</div>
+                    <div class="department-info">
+                        <h3 class="department-name" data-en="Department of Legal Wing" data-te="న్యాయ విభాగం" data-ur="شعبہ قانونی ونگ">Department of Legal Wing</h3>
+                        <p class="department-secretary" data-en="Adv. Afsar Jaha" data-te="న్యాయవాది అఫ్సర్ జహా" data-ur="ایڈووکیٹ افسر جہاں">Adv. Afsar Jaha</p>
+                    </div>
+                </div>
+
+                <div class="department-card reveal">
+                    <div class="department-number">7</div>
+                    <div class="department-info">
+                        <h3 class="department-name" data-en="Department of Media" data-te="మీడియా విభాగం" data-ur="شعبہ میڈیا">Department of Media</h3>
+                        <p class="department-secretary" data-en="Mr. Syed Mohammad" data-te="శ్రీ సయ్యద్ మొహమ్మద్" data-ur="جناب سید محمد">Mr. Syed Mohammad</p>
+                        <p class="department-joint-sec" data-en="Joint Sec: Miss. Kaniza Gharari" data-te="సంయుక్త కార్యదర్శి: మిస్ కనీజా ఘరారీ" data-ur="جوائنٹ سیکرٹری: مس کنیزہ غراری">Joint Sec: Miss. Kaniza Gharari</p>
+                    </div>
+                </div>
+
+                <div class="department-card reveal">
+                    <div class="department-number">8</div>
+                    <div class="department-info">
+                        <h3 class="department-name" data-en="Department of Milli Youth Forum" data-te="మిల్లీ యూత్ ఫోరమ్ విభాగం" data-ur="شعبہ ملی یوتھ فورم">Department of Milli Youth Forum</h3>
+                        <p class="department-secretary" data-en="Dr. Syed Shafiuddin" data-te="డా. సయ్యద్ షఫీయుద్దీన్" data-ur="ڈاکٹر سید شفیع الدین">Dr. Syed Shafiuddin</p>
+                    </div>
+                </div>
+
+                <div class="department-card reveal">
+                    <div class="department-number">9</div>
+                    <div class="department-info">
+                        <h3 class="department-name" data-en="Department of Political Affairs" data-te="రాజకీయ వ్యవహారాల విభాగం" data-ur="شعبہ سیاسی امور">Department of Political Affairs</h3>
+                        <p class="department-secretary" data-en="Mr. Syed Hussain" data-te="శ్రీ సయ్యద్ హుస్సేన్" data-ur="جناب سید حسین">Mr. Syed Hussain</p>
+                    </div>
+                </div>
+
+                <div class="department-card reveal">
+                    <div class="department-number">10</div>
+                    <div class="department-info">
+                        <h3 class="department-name" data-en="Department of Family Council" data-te="కుటుంబ కౌన్సిల్ విభాగం" data-ur="شعبہ فیملی کونسل">Department of Family Council</h3>
+                        <p class="department-secretary" data-en="Miss. Khadija" data-te="మిస్ ఖదీజా" data-ur="مس خدیجہ">Miss. Khadija</p>
+                        <p class="department-joint-sec" data-en="Joint Sec: Miss Mirza" data-te="సంయుక్త కార్యదర్శి: మిస్ మీర్జా" data-ur="جوائنٹ سیکرٹری: مس مرزا">Joint Sec: Miss Mirza</p>
+                    </div>
+                </div>
+
+                <div class="department-card reveal">
+                    <div class="department-number">11</div>
+                    <div class="department-info">
+                        <h3 class="department-name" data-en="Department of Communal Harmony and Integration" data-te="మత సామరస్యం మరియు సమైక్యత విభాగం" data-ur="شعبہ فرقہ وارانہ ہم آہنگی و انضمام">Department of Communal Harmony and Integration</h3>
+                        <p class="department-secretary" data-en="Molana. Noshad Akhtar Nadvi" data-te="మౌలానా నోషాద్ అఖ్తర్ నద్వీ" data-ur="مولانا نوشاد اختر ندوی">Molana. Noshad Akhtar Nadvi</p>
+                        <p class="department-joint-sec" data-en="Joint Sec: Molana Dr. Azam Nadvi" data-te="సంయుక్త కార్యదర్శి: మౌలానా డా. ఆజమ్ నద్వీ" data-ur="جوائنٹ سیکرٹری: مولانا ڈاکٹر اعظم ندوی">Joint Sec: Molana Dr. Azam Nadvi</p>
+                    </div>
+                </div>
+
+                <div class="department-card reveal">
+                    <div class="department-number">12</div>
+                    <div class="department-info">
+                        <h3 class="department-name" data-en="Department of Humanitarian Work" data-te="మానవతా కార్యకలాపాల విభాగం" data-ur="شعبہ انسانی خدمات">Department of Humanitarian Work</h3>
+                        <p class="department-secretary" data-en="Dr. Mohammad Afroz" data-te="డా. మొహమ్మద్ అఫ్రోజ్" data-ur="ڈاکٹر محمد افروز">Dr. Mohammad Afroz</p>
                     </div>
                 </div>
             </div>
@@ -1950,11 +2150,11 @@
                     </li>
                     <li>
                         <span class="icon"><i data-lucide="phone" style="width: 20px; height: 20px;"></i></span>
-                        <span>+91 XXXXX XXXXX</span>
+                        <span>+91 7981798026</span>
                     </li>
                     <li>
                         <span class="icon"><i data-lucide="mail" style="width: 20px; height: 20px;"></i></span>
-                        <span>info@aimctelangana.org</span>
+                        <span>Info@allindiamillicouncil.org</span>
                     </li>
                 </ul>
             </div>
