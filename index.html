@@ -615,6 +615,10 @@
                 display: none;
             }
 
+            .hero-visual {
+                display: none;
+            }
+
             .hero-stats {
                 flex-direction: column;
                 gap: 1rem;
@@ -1448,6 +1452,68 @@
             transition: all 0.3s ease;
         }
 
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--nav-bg);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            padding-top: 80px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            list-style: none;
+        }
+
+        .mobile-menu-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-links a:hover {
+            color: var(--primary-green);
+        }
+
+        @media (max-width: 992px) {
+            .mobile-menu {
+                display: block;
+            }
+        }
+
         /* Scroll to Top Button */
         .scroll-top {
             position: fixed;
@@ -1641,9 +1707,9 @@
                         <span>▼</span>
                     </button>
                     <div class="lang-dropdown">
-                        <div class="lang-option" data-lang="en">🇬🇧 English</div>
-                        <div class="lang-option" data-lang="te">🇮🇳 తెలుగు</div>
-                        <div class="lang-option" data-lang="ur">🇵🇰 اردو</div>
+                        <div class="lang-option" data-lang="en">English</div>
+                        <div class="lang-option" data-lang="te">తెలుగు</div>
+                        <div class="lang-option" data-lang="ur">اردو</div>
                     </div>
                 </div>
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
@@ -1655,6 +1721,17 @@
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-menu-links">
+            <li><a href="#home" data-en="Home" data-te="హోమ్" data-ur="ہوم">Home</a></li>
+            <li><a href="#about" data-en="About" data-te="గురించి" data-ur="ہمارے بارے میں">About</a></li>
+            <li><a href="#programs" data-en="Programs" data-te="కార్యక్రమాలు" data-ur="پروگرامز">Programs</a></li>
+            <li><a href="#events" data-en="Events" data-te="ఈవెంట్స్" data-ur="ایونٹس">Events</a></li>
+            <li><a href="#contact" data-en="Contact" data-te="సంప్రదించండి" data-ur="رابطہ کریں">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -1702,8 +1779,6 @@
 
             <div class="hero-visual">
                 <div class="hero-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1529390079861-591f7f24e951?w=600&h=500&fit=crop" alt="Community Gathering" class="hero-main-image">
-
                     <div class="hero-logo-badge">
                         <img src="images/logo.png" alt="AIMC Logo">
                     </div>
@@ -2248,6 +2323,26 @@
         themeToggle.addEventListener('click', () => {
             const isDark = html.getAttribute('data-theme') === 'dark';
             setTheme(!isDark);
+        });
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-menu-links a');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close mobile menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
 
         // Navbar Scroll Effect
