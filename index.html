@@ -1159,6 +1159,177 @@
             }
         }
 
+        /* Constitution/Document Section */
+        .constitution {
+            padding: 6rem 2rem;
+            background: var(--warm-white);
+        }
+
+        .constitution-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .constitution-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 15px 50px var(--shadow-color);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .constitution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .constitution-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .constitution-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .constitution-subtitle {
+            color: var(--text-medium);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .constitution-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-download {
+            background: var(--gradient-gold);
+            color: var(--text-dark);
+            border: none;
+            box-shadow: 0 8px 30px rgba(201, 162, 39, 0.3);
+        }
+
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(201, 162, 39, 0.4);
+        }
+
+        .btn-view {
+            background: transparent;
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+        }
+
+        .btn-view:hover {
+            background: var(--primary-green);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* PDF Modal */
+        .pdf-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .pdf-modal.active {
+            display: flex;
+        }
+
+        .pdf-modal-content {
+            width: 100%;
+            max-width: 1000px;
+            height: 90vh;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .pdf-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--primary-brown);
+            color: white;
+        }
+
+        .pdf-modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+        }
+
+        .pdf-modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            line-height: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .pdf-modal-close:hover {
+            transform: scale(1.1);
+        }
+
+        .pdf-modal iframe {
+            width: 100%;
+            height: calc(100% - 60px);
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .constitution-card {
+                padding: 2rem;
+            }
+
+            .constitution-title {
+                font-size: 1.5rem;
+            }
+
+            .pdf-modal {
+                padding: 1rem;
+            }
+
+            .pdf-modal-content {
+                height: 85vh;
+            }
+        }
+
         /* Events Section */
         .events {
             padding: 6rem 2rem;
@@ -2029,7 +2200,7 @@
                     <div class="department-number">4</div>
                     <div class="department-info">
                         <h3 class="department-name" data-en="Department of Modern and Technical Education" data-te="ఆధునిక మరియు సాంకేతిక విద్య విభాగం" data-ur="شعبہ جدید و فنی تعلیم">Department of Modern and Technical Education</h3>
-                        <p class="department-secretary" data-en="Mr. Abdul Lateef Aatir" data-te="శ్రీ అబ్దుల్ లతీఫ్ ఆతిర్" data-ur="جناب عبدالطیف عاطر">Mr. Abdul Lateef Aatir</p>
+                        <p class="department-secretary" data-en="Syed Shafi Uddin Aijaz" data-te="సయ్యద్ షఫీ ఉద్దీన్ ఐజాజ్" data-ur="سید شفیع الدین اعجاز">Syed Shafi Uddin Aijaz</p>
                     </div>
                 </div>
 
@@ -2062,7 +2233,7 @@
                     <div class="department-number">8</div>
                     <div class="department-info">
                         <h3 class="department-name" data-en="Department of Milli Youth Forum" data-te="మిల్లీ యూత్ ఫోరమ్ విభాగం" data-ur="شعبہ ملی یوتھ فورم">Department of Milli Youth Forum</h3>
-                        <p class="department-secretary" data-en="Dr. Syed Shafiuddin" data-te="డా. సయ్యద్ షఫీయుద్దీన్" data-ur="ڈاکٹر سید شفیع الدین">Dr. Syed Shafiuddin</p>
+                        <p class="department-secretary" data-en="Mohd Imad Ali & Mohd Zubair Quadri" data-te="మొహమ్మద్ ఇమాద్ అలీ & మొహమ్మద్ జుబైర్ ఖాద్రీ" data-ur="محمد عماد علی اور محمد زبیر قادری">Mohd Imad Ali & Mohd Zubair Quadri</p>
                     </div>
                 </div>
 
@@ -2099,9 +2270,59 @@
                         <p class="department-secretary" data-en="Dr. Mohammad Afroz" data-te="డా. మొహమ్మద్ అఫ్రోజ్" data-ur="ڈاکٹر محمد افروز">Dr. Mohammad Afroz</p>
                     </div>
                 </div>
+
+                <div class="department-card reveal">
+                    <div class="department-number">13</div>
+                    <div class="department-info">
+                        <h3 class="department-name" data-en="Department of Research and Analysis" data-te="పరిశోధన మరియు విశ్లేషణ విభాగం" data-ur="شعبہ تحقیق و تجزیہ">Department of Research and Analysis</h3>
+                        <p class="department-secretary" data-en="Janab Zafar Masood Sahab" data-te="జనాబ్ జాఫర్ మసూద్ సాహెబ్" data-ur="جناب ظفر مسعود صاحب">Janab Zafar Masood Sahab</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Constitution/Dastoor Section -->
+    <section class="constitution" id="constitution">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-tag" data-en="Our Foundation" data-te="మా పునాది" data-ur="ہماری بنیاد">Our Foundation</span>
+                <h2 class="section-title" data-en="Constitution (Dastoor)" data-te="రాజ్యాంగం (దస్తూర్)" data-ur="دستور">Constitution (Dastoor)</h2>
+                <p class="section-subtitle" data-en="The guiding principles and bylaws that govern our organization's mission and operations." data-te="మా సంస్థ యొక్క లక్ష్యం మరియు కార్యకలాపాలను నిర్దేశించే మార్గదర్శక సూత్రాలు మరియు నిబంధనలు." data-ur="رہنما اصول اور ضوابط جو ہماری تنظیم کے مشن اور کارروائیوں کو منظم کرتے ہیں۔">The guiding principles and bylaws that govern our organization's mission and operations.</p>
+            </div>
+
+            <div class="constitution-container">
+                <div class="constitution-card reveal">
+                    <div class="constitution-icon">
+                        <i data-lucide="scroll-text" style="width: 36px; height: 36px; color: white;"></i>
+                    </div>
+                    <h3 class="constitution-title" data-en="Dastoor - All India Milli Council" data-te="దస్తూర్ - ఆల్ ఇండియా మిల్లీ కౌన్సిల్" data-ur="دستور - آل انڈیا ملی کونسل">Dastoor - All India Milli Council</h3>
+                    <p class="constitution-subtitle" data-en="Download or view the official constitution document (Amended 2024) that outlines our organizational structure, objectives, and guidelines." data-te="మా సంస్థాగత నిర్మాణం, లక్ష్యాలు మరియు మార్గదర్శకాలను వివరించే అధికారిక రాజ్యాంగ పత్రాన్ని (సవరించబడిన 2024) డౌన్‌లోడ్ చేయండి లేదా చూడండి." data-ur="سرکاری دستوری دستاویز (ترمیم شدہ 2024) ڈاؤن لوڈ یا دیکھیں جو ہماری تنظیمی ڈھانچے، مقاصد اور رہنما اصولوں کا خاکہ پیش کرتا ہے۔">Download or view the official constitution document (Amended 2024) that outlines our organizational structure, objectives, and guidelines.</p>
+                    <div class="constitution-buttons">
+                        <a href="dastoor-all-india-milli-council-ammended-2024.pdf" download class="btn btn-download">
+                            <i data-lucide="download" style="width: 18px; height: 18px;"></i>
+                            <span data-en="Download PDF" data-te="PDF డౌన్‌లోడ్" data-ur="پی ڈی ایف ڈاؤن لوڈ">Download PDF</span>
+                        </a>
+                        <button class="btn btn-view" onclick="openPdfModal()">
+                            <i data-lucide="eye" style="width: 18px; height: 18px;"></i>
+                            <span data-en="View Document" data-te="పత్రాన్ని చూడండి" data-ur="دستاویز دیکھیں">View Document</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PDF Modal -->
+    <div class="pdf-modal" id="pdf-modal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <span class="pdf-modal-title" data-en="Dastoor - All India Milli Council (Amended 2024)" data-te="దస్తూర్ - ఆల్ ఇండియా మిల్లీ కౌన్సిల్ (సవరించబడిన 2024)" data-ur="دستور - آل انڈیا ملی کونسل (ترمیم شدہ 2024)">Dastoor - All India Milli Council (Amended 2024)</span>
+                <button class="pdf-modal-close" onclick="closePdfModal()">&times;</button>
+            </div>
+            <iframe id="pdf-iframe" src=""></iframe>
+        </div>
+    </div>
 
     <!-- Events Section -->
     <section class="events" id="events">
@@ -2436,6 +2657,36 @@
                     });
                 }
             });
+        });
+
+        // PDF Modal Functions
+        const pdfModal = document.getElementById('pdf-modal');
+        const pdfIframe = document.getElementById('pdf-iframe');
+
+        function openPdfModal() {
+            pdfIframe.src = 'dastoor-all-india-milli-council-ammended-2024.pdf';
+            pdfModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePdfModal() {
+            pdfModal.classList.remove('active');
+            pdfIframe.src = '';
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on outside click
+        pdfModal.addEventListener('click', (e) => {
+            if (e.target === pdfModal) {
+                closePdfModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && pdfModal.classList.contains('active')) {
+                closePdfModal();
+            }
         });
 
         // Form Submission (Demo)
